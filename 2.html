@@ -1,5 +1,24 @@
 <div id="app">
   <p>{{message}}{{emotion}}</p>
+  <p>{{count}}</p>
+  <p>{{user.age}}</p>
+  <p>{{colors[1]}}</p>
+
+
+  <input type="text" v-bind:value="inputMessage">
+
+<!-- v-for　でループ番号も付けられる。ブロック変数の2番目にループ番号の変数を指定する点に注意-->
+<p v-for="(color, index) in colors">{{index}}.{{color}}</p>
+<br>
+<p v-for="(value, key) in user">{{key}}:{{value}}</p>
+
+<button v-on:click="onClick">Click!</button>
+<p>{{now}}</p>
+
+
+
+
+
 </div>
 
 <!-- @nextで最新のものを指定。 バージョン指定も可能 -->

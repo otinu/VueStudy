@@ -1,8 +1,22 @@
 const app = Vue.createApp({
     data: () => ({ // ※1
         message: 'Hello Vue',
-        emotion: '!!!!'
-    })
+        emotion: '!!!!',
+        count: 0,
+        user: {
+            lastName: 'o',
+            firstName: 'tinu',
+            age: 3
+        },
+        colors: ['Red', 'Green', 'Blue'],
+        inputMessage: 'Hello v-bind',
+        now: '-'
+    }),
+    methods: {
+        onClick: function() {
+            this.now = new Date().toLocaleDateString()
+        }
+    }
 })  // セミコロンは付けなくてもOK
 
 app.mount('#app')
