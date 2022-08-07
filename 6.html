@@ -10,6 +10,25 @@
 
     <!-- 算出プロパティを設定することで、好みの処理をコンポーネント化できる -->
     <p>{{ reversedMessage }}</p>
+
+    <p>base price: <input type="text" v-model="basePrice"></p>
+    <p>tax included price: 
+      <input type="text" v-model="taxIncludedPrice">
+    </p>
+
+    <h2>computed:</h2>
+    <ol>
+      <li>{{ computedNumber }}</li>
+      <li>{{ computedNumber }}</li>
+      <li>{{ computedNumber }}</li>
+    </ol>
+    <h2>methods:</h2>
+    <ol>
+      <li>{{ methodsNumber() }}</li>
+      <li>{{ methodsNumber() }}</li>
+      <li>{{ methodsNumber() }}</li>
+    </ol>
+
   </div>
   <script src="https://unpkg.com/vue@next"></script>
   <script src="js/6.js"></script>
