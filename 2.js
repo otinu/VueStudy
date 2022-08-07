@@ -10,7 +10,8 @@ const app = Vue.createApp({
         },
         colors: ['Red', 'Green', 'Blue'],
         inputMessage: 'Hello v-bind',
-        now: '-'
+        now: '-',
+        VModelMessage: 'It\'s v-model'
     }),
     methods: {
         onClick: function() {
@@ -18,6 +19,11 @@ const app = Vue.createApp({
         }
     }
 })  // セミコロンは付けなくてもOK
+
+// 「self-component」を「selfComponent」とキャメルケースで記述するのはNG
+app.component('self-component', {
+    template: '<p>自作コンポーネントです</p>'
+})
 
 app.mount('#app')
 

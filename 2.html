@@ -1,26 +1,31 @@
+<head></head>
+<body>
 <div id="app">
   <p>{{message}}{{emotion}}</p>
   <p>{{count}}</p>
   <p>{{user.age}}</p>
   <p>{{colors[1]}}</p>
 
+  <input type="text" v-bind:value="inputMessage" />
 
-  <input type="text" v-bind:value="inputMessage">
+  <!-- v-for　でループ番号も付けられる。ブロック変数の2番目にループ番号の変数を指定する点に注意-->
+  <p v-for="(color, index) in colors">{{index}}.{{color}}</p>
+  <br />
+  <p v-for="(value, key) in user">{{key}}:{{value}}</p>
 
-<!-- v-for　でループ番号も付けられる。ブロック変数の2番目にループ番号の変数を指定する点に注意-->
-<p v-for="(color, index) in colors">{{index}}.{{color}}</p>
-<br>
-<p v-for="(value, key) in user">{{key}}:{{value}}</p>
+  <button v-on:click="onClick">Click!</button>
+  <p>{{now}}</p>
 
-<button v-on:click="onClick">Click!</button>
-<p>{{now}}</p>
+  <strong>JS側の値も変化します</strong>
+  <p><input type="text" v-model="VModelMessage" /></p>
+  <pre>{{$data}}</pre>
+  <br />
 
-
-
-
-
+  <self-component></hello-component>
 </div>
 
 <!-- @nextで最新のものを指定。 バージョン指定も可能 -->
 <script src="https://unpkg.com/vue@next"></script>
 <script src="2.js"></script>
+
+</body>
