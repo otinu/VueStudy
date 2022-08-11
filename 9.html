@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js 3</title>
+    <link rel="stylesheet" href="css/9.css" />
+  </head>
+  <body>
+    <div id="app">
+      <p>
+        Hello
+        <!-- フラグを用いて、オン・オフの切り替えが可能 -->
+        <!-- プレーンなクラス属性と共存可能 -->
+
+        <!-- largeとtext-dangerをtrueにした場合は下記の出力になる
+          　bg-gray text-blue large text-danger
+            この場合、文字色の変更は重複するため、先に読み込まれたCSSが適用される
+          
+        <span class="bg-gray text-blue"
+        v-bind:class="{ large: isLarge, 'text-danger': hasError }">Vue.js!</span>
+      -->
+
+        <!-- 
+        配列構文でデータバインドする場合 
+        <span
+          class="bg-gray text-blue"
+          v-bind:class="[largeClass, dangerClass]">Vue.js!
+        </span>
+      -->
+      
+      <!-- オブジェクト型のデータでデータバインドする場合 -->
+      <span v-bind:class="classObject">Vue.js!</span>
+    </p>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="js/9.js"></script>
+  </body>
+</html>
