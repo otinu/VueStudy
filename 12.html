@@ -12,12 +12,18 @@
     <input type="text" v-model="message" value="hogehoge"><br><br>
 
     <!-- テキストエリアでは、Mustache構文を使ったデータバインディングは使えない -->
+    <strong>テキストエリア</strong><br>
     <p>{{ textarea_message }}</p>
     <!-- <textarea>{{ message }}</textarea> -->
     <!-- v-modelを利用する-->
     <textarea v-model="textarea_message"></textarea><br><br>
 
-    <!--  -->
+    <!-- チェックボックス(単体)は真偽値で扱う -->
+    <strong>チェックボックス(単体)</strong><br>
+    <label for="checkbox">{{ checked }}</label>
+    <input type="checkbox" id="checkbox" v-model="checked"><br>
+    <!-- チェックボックス(複数)は配列で扱う -->
+    <strong>チェックボックス(複数)</strong><br>
     <label for="red">Red</label>
     <input type="checkbox" id="red" value="赤色" v-model="colors">
     <label for="red">Blue</label>
@@ -25,6 +31,53 @@
     <label for="red">Green</label>
     <input type="checkbox" id="green" value="緑色" v-model="colors">
     <p>{{ colors }}</p>
+
+    <!-- ラジオボタンのデフォルトの値の型は文字列 -->
+    <strong>ラジオボタン</strong><br>
+    <input type="radio" id="red" value="レッド" v-model="color">
+    <label for="red">Red</label>
+    <input type="radio" id="blue" value="ブルー" v-model="color">
+    <label for="red">Blue</label>
+    <input type="radio" id="green" value="グリーン" v-model="color">
+    <label for="red">Green</label>
+    <p>{{ color }}</p>
+
+    <!-- セレクトボックス(1つだけ選択) -->
+    <strong>セレクトボックス(1つだけ選択) </strong><br>
+    <select v-model="selected_one">
+        <option disabled value="">Please select one</option>
+        <option>Red</option>
+        <option>Green</option>
+        <option>Blue</option>
+      </select>
+      <p>{{ selected_one }}</p>
+
+      <!-- セレクトボックス(複数選択) -->
+    <strong>セレクトボックス(複数選択)</strong><br>
+      <select v-model="selected_any" multiple>
+        <option>Red</option>
+        <option>Green</option>
+        <option>Blue</option>
+      </select>
+      <p>※Shift+クリック</p>
+      <p>{{ selected_any }}</p>
+
+      <!-- 修飾子 .lazy -->
+       <!-- EnterやTabで入力が確定してから、v-modelが機能する-->
+      <strong>修飾子 .lazy</strong><br>
+      <input type="text" v-model.lazy="lazy_message">
+      <p>{{ lazy_message }}</p>
+
+      <!-- 修飾子 .trim -->
+      <strong>修飾子 .trim</strong><br>
+      <input type="text" v-model.trim="trim_message"><br>
+      <input type="text" v-model="trim_message">
+      <pre>{{ $data.trim_message }}</pre>
+
+      <!-- 修飾子 .number -->
+      <strong>修飾子 .number</strong><br>
+      <input type="number" v-model.number="age"><br>
+      {{ age + 10 }}
 
   </div>
   <script src="https://unpkg.com/vue@next"></script>
