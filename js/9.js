@@ -7,6 +7,12 @@ const app = Vue.createApp({
     classObject: {
       large: true,
       'text-danger': true
+    },
+    inlineColor: "blue",
+    inlineFonsSize: 36,
+    inlineStyleObject: {
+      color: "green",
+      fontSize: "45px"
     }
   })
 })

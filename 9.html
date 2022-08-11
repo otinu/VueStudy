@@ -22,16 +22,38 @@
         v-bind:class="{ large: isLarge, 'text-danger': hasError }">Vue.js!</span>
       -->
 
-        <!-- 
-        配列構文でデータバインドする場合 
-        <span
+        <!-- 配列構文でデータバインドする場合 -->
+        <!--
+          <span
           class="bg-gray text-blue"
           v-bind:class="[largeClass, dangerClass]">Vue.js!
+          </span>
+        -->
+
+        <!-- オブジェクト型のデータでデータバインドする場合 -->
+        <!-- 
+          <span v-bind:class="classObject">Vue.js!</span>]
+        -->
+
+        <!-- 三項演算子でデータバインドする場合 -->
+        <!-- 
+          <span v-bind:class="[isLarge ? largeClass: '', dangerClass]">
+            Vue.js!
+          </span>
+        -->
+
+        <!-- インラインスタイルで指定する(属性毎)場合 -->
+        <!--
+          <span v-bind:style="{ color: inlineColor, 'font-size': inlineFonsSize + 'px' }">
+            Vue.js
+          </span>
+        -->
+
+        <!-- インラインスタイルで指定する(オブジェクト)場合 -->
+        <span>
+          <span v-bind:style="inlineStyleObject">Vue.js!</span>
         </span>
-      -->
-      
-      <!-- オブジェクト型のデータでデータバインドする場合 -->
-      <span v-bind:class="classObject">Vue.js!</span>
+        
     </p>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
