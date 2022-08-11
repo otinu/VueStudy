@@ -10,12 +10,6 @@ const app = Vue.createApp({
       lazy_message: '', // 修飾子 .lazy
       trim_message: '', // 修飾子 .trim
       age: 0 // 修飾子 .number
-      
-      
-      
-      
-      
-
     }),
   })
   app.mount('#app')
