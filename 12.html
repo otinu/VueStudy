@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue.js 3</title>
+</head>
+<body>
+  <div id="app">
+    <!-- v-model利用時はvalueやchecked,selectedは反映されない -->
+    <input type="text" v-model="message" value="hogehoge"><br><br>
+
+    <!-- テキストエリアでは、Mustache構文を使ったデータバインディングは使えない -->
+    <p>{{ textarea_message }}</p>
+    <!-- <textarea>{{ message }}</textarea> -->
+    <!-- v-modelを利用する-->
+    <textarea v-model="textarea_message"></textarea><br><br>
+
+    <!--  -->
+    <label for="red">Red</label>
+    <input type="checkbox" id="red" value="赤色" v-model="colors">
+    <label for="red">Blue</label>
+    <input type="checkbox" id="blue" value="青色" v-model="colors">
+    <label for="red">Green</label>
+    <input type="checkbox" id="green" value="緑色" v-model="colors">
+    <p>{{ colors }}</p>
+
+  </div>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="js/12.js"></script>
+</body>
+</html>
